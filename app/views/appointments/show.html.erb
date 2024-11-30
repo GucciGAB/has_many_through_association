@@ -1,0 +1,11 @@
+<h1>Appointment Details</h1>
+
+<p><strong>Physician:</strong> <%= @appointment.Physician.name %></p>
+<p><strong>Patient:</strong> <%= @appointment.Patient.name %></p>
+<p><strong>Appointment Date:</strong> <%= @appointment.appointment_date %></p>
+<p><strong>Location:</strong> <%= @appointment.location %></p>
+<p><strong>Status:</strong> <%= @appointment.status %></p>
+<p><strong>Notes:</strong> <%= @appointment.note %></p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

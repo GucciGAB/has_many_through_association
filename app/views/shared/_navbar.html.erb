@@ -1,0 +1,46 @@
+<!-- Navbar -->
+<nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <!-- Logo (or brand name) -->
+        <a href="/" class="text-2xl font-semibold text-gray-800">Apphuyment</a>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex space-x-6">
+        <%= link_to 'Appointments', appointments_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+        <%= link_to 'Patients', patients_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+        <%= link_to 'Physicians', physicians_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+      </div>
+
+      <!-- Mobile Menu Button (Hamburger Icon) -->
+      <div class="md:hidden">
+        <button id="navbar-toggle" class="text-gray-800 hover:text-blue-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Links -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md absolute top-16 left-0 w-full z-50">
+    <div class="flex flex-col space-y-4 px-4 py-3">
+      <%= link_to 'Appointments', appointments_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+      <%= link_to 'Patients', patients_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+      <%= link_to 'Physicians', physicians_path, class: 'text-gray-800 hover:text-blue-600 transition duration-200' %>
+    </div>
+  </div>
+</nav>
+
+<!-- JavaScript to toggle mobile menu -->
+<script>
+  const toggleButton = document.getElementById('navbar-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
